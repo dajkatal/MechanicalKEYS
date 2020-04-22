@@ -1,0 +1,25 @@
+{
+  "name": "Mechanical",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "package-mac": "electron-packager . Mechanical --platform=darwin --arch=x64",
+    "pack-mac": "electron-installer-dmg . Mechanical --icon=build/icon.incs --title=Mechanical By Daj --out=release-builds --overwrite"
+  },
+  "author": "DajKatal",
+  "license": "ISC",
+  "dependencies": {
+    "java-func-caller": "0.0.8",
+    "jquery": "^3.3.1",
+    "key-listener": "^1.0.1",
+    "nkbhook": "^0.1.2",
+    "readdirp": "^2.2.1"
+  },
+  "devDependencies": {
+    "electron": "^3.0.10",
+    "electron-installer-dmg": "^2.0.0",
+    "electron-packager": "^13.0.1"
+  }
+}

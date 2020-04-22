@@ -1,0 +1,95 @@
+﻿<!DOCTYPE html>
+<html manifest="offline.appcache">
+<head>
+    <meta charset="UTF-8" />
+    <title>Mechanical</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="HandheldFriendly" content="false" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="Bootstrap.css" />
+
+</head>
+<body style="background: #190c41;">
+    <header>
+        <h1 id="header" class="col-md-4" style="color: white; text-align: left; padding-left: 15px; padding-top: 3px; font-size: 30px;">Mechanical <font id="creator">by Daj</font></h1>
+        <nav class="col-md-4" style="position: absolute; transform: translateX(67%) translateY(-86%);">
+            <ul>
+                <li style="height: 30px; cursor: pointer;" onclick="minimizeWindow()"><img src="media/btn-min.svg" id="min" style="margin: 10px;"></li>
+                <li style="padding: 4px 13px; cursor: pointer;" onclick="closeWindow()"><img src="media/btn-close.svg"></l>
+            </ul>
+        </nav>
+    </header>
+
+        <div class="container" onclick="menuOpen();" style="position: fixed; transform: scale(0.7, 0.7) translateX(105%); z-index: 100; cursor: pointer;">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+        </div>
+        
+        <!-- Options Window -->
+        <div class="col-md-6" id="optionsMenu" style="transition: 0.6s all ease-in-out; height: 75%;">
+            <div class="overlay">
+                <div class="container">
+                    <h1 id="header" style="color: white; text-align: center; padding-top: 10px; padding-bottom: 15px;">Options</h1>
+                    <!--Speaker -->
+                    <div class="row" style="justify-content: center;">
+                        <h5 style="color: white; width: 50%; height: 65px; transform: translateX(4%); font-size: 15px;">Speakers</h5>
+                        <p class="subheading">Choose what speaker plays<br>the audio</p>
+                        <div class="dropdown" style="z-index: 81; transform: translateX(-10%);">
+                            <button id="dropDownMain" class="btn btn-secondary" style="width: 150px; box-shadow: none;" onclick="dropdownOpen(0, 'dropDownSpeakers' )" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <div id="btn-text" class="button-text">Default</div>
+                                <div class="dropdown-toggle" style="position: absolute; color: white; transform: translateY(-45%) translateX(1200%);"></div>
+                            </button>
+
+                            <div id="dropDownSpeakers" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Sound Packs -->
+                    <div class="row" style="justify-content: center;">
+                        <h5 style="color: white; width: 50%; height: 65px; transform: translateX(8%); font-size: 15px;">Sound Pack</h5>
+                        <p class="subheading" style="transform: translateY(80%) translateX(-79%);">These determine what keyboard <br> will be replicated</p>
+                        <div class="dropdown" style="z-index: 80; transform: translateX(-15%);">
+                            <button id="dropDownMainSound" class="btn btn-secondary" style="width: 150px; box-shadow: none;" onclick="dropdownOpen(1, 'dropDownSoundPack' )" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <div id="btn-textSound" class="button-text">CherryMx Blues</div>
+                                    <div class="dropdown-toggle" style="position: absolute; color: white; transform: translateY(-45%) translateX(1200%);"></div>
+                                </button>
+                            <div id="dropDownSoundPack" class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="transform: translateY(-47%) translateX(-44.5%);">
+                            </div>
+                        </div>
+                    </div>
+                    <!--Volume-->
+                    <div class="row" style="justify-content: center;">
+                        <h5 style="color:white; width: 100%; height: 50px; transform: translateX(8%); font-size: 15px;">Volume</h5>
+                        <form action="#" method="post" style="margin-left: -10px; margin-top: -5px;">
+                            <input type="range" id="volume" value="50" style="cursor: -webkit-grab;" class="slider" min="0" max="100" onchange="onRangeChange()" />
+                            <div class="placeholderOutput" style="height: 20px;" ><output id="volumeValue">50</output></div>
+                        </form>
+                    </div>
+        
+                    <!-- Save or Cancel -->
+                    <div class="row" style="margin-top: 30px; position: fixed; margin: 0 auto; left: 0; right: 0;">
+                        <div class="col-xs-4" style="margin: 0 auto;">
+                            <button id="button-options" style="width: 250px; margin-left: 5px;" onclick="done(this); menuOpen(); writeJson()"><font style="color: #262626; letter-spacing: 3px;">done</font></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="bodyWindow"></div>
+
+        <!-- The Rest -->
+        <div class="" style="transform: translateY(6%); z-index: 0;">
+            <div id="btn-main" class="container" onclick="clicked(); KeyBoard();" style="height: 263px; width: 263px; border-radius: 161px; background:  transparent; transform: translate(34%, 25%);"></div>
+        
+        </div>
+        <div id="video-overlay" class="video-overlay"></div>
+        <div class="full-overlay" style="z-index: -1;"></div>
+
+
+    <script type="text/javascript" src="index.js"></script>
+
+</body>
+</html>

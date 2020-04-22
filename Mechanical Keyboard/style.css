@@ -1,0 +1,287 @@
+@font-face {
+    font-family: Robotto-MedItalic;
+    src: url('fonts/RobotoMono-MediumItalic.ttf');
+}
+@font-face {
+    font-family: Robotto-Thin;
+    src: url('fonts/Roboto-Thin.ttf');
+}
+
+* {
+    user-select: none;
+    outline: 0;
+    box-shadow: transparent;
+}
+
+html {
+    overflow: hidden;
+}
+
+ul li {
+    display: block;
+}
+
+.speakerBtn {
+    width: 150px;
+}
+
+header {
+    padding: 10px 0; 
+    background: #372F63;
+    -webkit-app-region: drag;
+}
+
+ul {
+    display: table;
+}
+
+ul li img {
+    width: 15px;
+    cursor: pointer;
+}
+
+ul li {
+    display: table-cell;
+    -webkit-app-region: no-drag;
+}
+
+ul li:hover {
+    background: rgba(0,0,0,0.1);
+}
+
+#volume {
+    -webkit-appearance: none;
+    width: 250px;
+    height: 4px;
+    /*background: linear-gradient(to right, #426bff 1%,#ff494c 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+
+}
+
+.dropDownOverlay {
+    background: white;
+    height: 176px;
+    width: 25px;
+    position: absolute;
+    z-index: 999;
+    transform: translateX(1000%) translateY(-4.5%);
+}
+
+
+#dropDownMain, #dropDownMainSound {
+    background-image: -webkit-gradient(linear, left top, right top, color-stop(0.75 , #8860D0), color-stop( 0.75 , rgba(50, 50, 50, 00.85)));
+    border-radius: 0;
+    border: 0;
+    height: 40px;
+    text-align: left;
+}
+
+.button-text {
+    position: absolute;
+    transform: translateY(-50%);
+    color: white;
+    width: 90px;
+    overflow: hidden;
+}
+
+.placeholderOutput {
+    width: 109.64;
+    height: 4;
+}
+
+.subheading {
+    position: absolute;
+    transform: translateY(80%) translateX(-106%);
+    font-size: 8px;
+    color: rgba(255,255,255,0.7);
+    z-index: 80;
+}
+
+output { 
+    line-height: 25px;
+    transform: translateY(-210%) translateX(225%);
+    position: sticky;
+    background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.3));
+    width: 40px; 
+    height: 25px; 
+    text-align: center; 
+    color: white; 
+    border-radius: 3px; 
+    display: inline-block; 
+    font-family: 'Robotto-MedItalic';
+    font-size: 14px;
+    bottom: 175%;
+    left: 0;
+    margin-left: -3.7%;
+  }
+  output:after { 
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-top: 5px solid rgba(0,0,0,0.3);
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    margin-top: 0px;
+  }
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    background: #00F2F2;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+}
+
+.full-overlay {
+    background: black;
+    height: 100vh; 
+    width: 100vw; 
+    z-index: 99;  
+    position: absolute; 
+    top: 0;
+    display: none;
+    opacity: 0.8;
+}
+
+#optionsMenu {
+    position: absolute;
+    background: url('media/gradient.jpg') no-repeat;
+    background-size: cover;
+    z-index: 100;
+    height: 80vh;
+    display: block;
+    width: 75%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-5%);
+    margin-top: 10vh;   
+    display: none;
+    opacity: 0;
+    border-left: 5px solid #e9d700;
+
+}
+
+#bodyWindow {
+    background: black;
+    opacity: 0.4;
+    width: 100vw;
+    height: 100vh;
+    z-index: 100;
+    position: absolute;
+    display: none;
+}
+
+#speakerList li {
+    max-height: 24px;
+}
+
+
+#header {
+    font-family: Robotto-MedItalic;
+    font-size: 40px;
+}       
+
+#creator {
+    font-family: Robotto-Thin;
+    font-size: 20px;
+}
+
+#button-cancel {
+    height: 40px;
+    width: 150px;
+    border-radius: 20px;
+    background-color: transparent;
+    padding: 0;
+    border: none;
+    transition: 0.6s;
+    transform-origin: center;
+    transform: scale(1, 1);
+    opacity: 1
+}
+
+#button-options {
+    outline: none;
+    height: 40px;
+    width: 150px;
+    border-radius: 20px;
+    background-color: #EA2E49;
+    padding: 0;
+    border: none;
+    transition: 0.3s;
+    transform-origin: center;
+    cursor: pointer;
+}
+
+#button-options:hover {
+        transform: scale(1.05, 1.05);
+        background: #ec3d56;
+}
+
+#button-img {
+    background: url(media/mechanical.png) no-repeat center center;
+    background-size: 200px 132px;
+    background-blend-mode: lighten;
+    height: 130px;
+    width: 130px;
+    border-radius: 130px;
+    opacity: 0;
+    transition: 0.6s;
+}
+
+.video-container {
+    position: fixed;
+
+    z-index: -99;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("media/buttonOff.gif") no-repeat center center/600px fixed;
+    z-index: -98;
+    transform: translateY(5%);
+    transition: 0.6s;
+}
+
+.overlay {
+    background: rgba(0, 0, 0, 0.5);
+    height: 100%;
+    width: 75vw;
+    transform: translateX(-4.7%);
+}
+
+.container {
+    display: inline-block;
+}
+
+.bar1, .bar2, .bar3 {
+    width: 35px;
+    height: 5px;
+    background-color: rgba(255, 255, 255, 0.9);
+    margin: 6px 0;
+    transition: 0.3s;
+}
+
+.change .bar1 {
+    -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+    transform: rotate(-45deg) translate(-10px, 5px);
+    
+}
+
+.change .bar2 {
+    opacity: 0;
+}
+
+.change .bar3 {
+    -webkit-transform: rotate(45deg) translate(-8px, -8px);
+    transform: rotate(45deg) translate(-10px, -5px);
+}
