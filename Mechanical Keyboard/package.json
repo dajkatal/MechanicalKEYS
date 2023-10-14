@@ -12,7 +12,7 @@
   "license": "ISC",
   "dependencies": {
     "java-func-caller": "0.0.8",
-    "jquery": "^3.3.1",
+    "jquery": "^3.5.0",
     "key-listener": "^1.0.1",
     "nkbhook": "^0.1.2",
     "readdirp": "^2.2.1"
